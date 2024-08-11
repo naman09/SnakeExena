@@ -56,11 +56,10 @@ public class Game {
         }
         
         System.out.println("Key pressed inside update:" + keyPressed.name());
-        // detectCollision
+        // TODO: detectCollision
     }
 
     private void draw() {
-        // System.out.println("called draw()");
         this.renderer.render(playingArea);
     }
 

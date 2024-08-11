@@ -52,7 +52,6 @@ public class Snake {
     }
 
     public void update(KeyboardKey keyPressed) {
-        // System.out.println("Key pressed inside snake update:" + keyPressed.name());
         Vector2 move = getMove(keyPressed);
 
         //find tail
@@ -61,12 +60,11 @@ public class Snake {
             System.err.println("could not find tail parent");
             return;
         }
-        // System.out.println("tP: " + tailParent);
+        
         Vector2 tail = new Vector2(
             tailParent.x + this.bodyGrid.get(tailParent.y).get(tailParent.x).x,
             tailParent.y + this.bodyGrid.get(tailParent.y).get(tailParent.x).y
         );
-        // System.out.println("t: " + tail);
         
         //del tail
         this.bodyGrid.get(tail.y).set(tail.x, new Vector2(-1, -1));
@@ -106,10 +104,9 @@ public class Snake {
     }
 
     private Vector2 findTailParent() {
-        // return new Vector2(this.head.x, this.head.y+2);
-        //TODO
-        // find 0,0
+        // return new Vector2(this.head.x, this.head.y+2); //NOSONAR
         
+        // find 0,0
         Vector2 tail = null;
         for(int i=0;i<this.bodyGrid.size();i++) {
             for(int j=0;j<this.bodyGrid.get(0).size(); j++) {
@@ -130,7 +127,6 @@ public class Snake {
 
         Integer[] dirX = { 1, 0, -1, 0 };
         Integer[] dirY = { 0, 1, 0, -1 };
-        // System.out.println("tail: " + tail);
         for(int i=0;i<4;i++) {
             Vector2 pos = this.bodyGrid.get(tail.y + dirY[i]).get(tail.x + dirX[i]);
             if (pos.x != null && pos.y != null) {
