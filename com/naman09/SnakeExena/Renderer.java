@@ -22,7 +22,7 @@ public class Renderer {
         }
     }
     public static void draw(String text) {
-        String filename = "Game.log";
+        String filename = "GameScreen";
         clearFile(filename);
         writeToFile(filename, text);
     }
